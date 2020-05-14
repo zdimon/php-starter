@@ -40,6 +40,21 @@
 
     ssh-keygen
 
+## Переход на комит или на ветку
+
+    git checkout <id-commit | name-of-branch>
+
+## Создание ветки
+
+    git branch 234-login-mail-book
+
+
+
+
+
+
+
+
 
 
 
