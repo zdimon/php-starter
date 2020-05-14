@@ -1,0 +1,40 @@
+[
+        {
+            "question": "Кто победил в ВОВ?",
+            "type": "radio",
+            "name": "question1",
+            "answers": [
+                          {"text": "CCCР", "is_valid": "true" },
+                          {"text": "США", "is_valid": "false" }
+                       ]
+        },
+        {
+            "question": "Есть ли бог на свете?",
+            "type": "radio",
+            "name": "question2",
+            "answers": [
+                          {"text": "Да", "is_valid": "true" },
+                          {"text": "Нет", "is_valid": "false" },
+                          {"text": "Наука не в курсе дела", "is_valid": false }
+                       ]
+        },
+
+        {
+            "question": "Любимое животное",
+            "type": "checkbox",
+            "name": "question3",
+            "answers": [
+                          {"text": "Кот", "value": "cat"},
+                          {"text": "Собака барабака", "value": "dog"},
+                          {"text": "Конь", "value": "horse"}
+                       ]
+        },
+
+        {
+            "question": "Как вас звать?",
+            "type": "text",
+            "name": "question4"
+        }
+
+
+    ]
