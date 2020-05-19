@@ -1,14 +1,10 @@
+<?php 
+    $json_data = get_db('quiz');
+    debug($json_data);
+?>
+
 <h1>Викторина!!!</h1>
 
-
-<?php
-    $content = file_get_contents('quiz.json');
-   
-    $json_data = json_decode($content);
-    
-    // var_dump($json_data);
-
-?>
 
 <div style="border: 1px solid red;">
 

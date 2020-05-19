@@ -1,4 +1,5 @@
-[
+{
+    "quiz": [
         {
             "question": "Кто победил в ВОВ?",
             "type": "radio",
@@ -35,6 +36,7 @@
             "type": "text",
             "name": "question4"
         }
-
-
-    ]
+    ],
+    "users": [],
+    "portfolio": []
+}
