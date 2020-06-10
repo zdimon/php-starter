@@ -1,3 +1,21 @@
+
+<?php 
+session_start();
+require_once('libs/app.php');
+require_once('libs/app.class.php');
+?>
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+      <title>Camera</title>
+
+    </head>
+
+    <body>
+
 	<video autoplay="true" id="videoElement">
 	
 	</video>
@@ -17,3 +35,10 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 
 </script>
+
+      
+    </body>
+</html>
+
+
+
