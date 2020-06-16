@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,8 @@ Route::get('/', function () {
 
     return view('welcome',['name' => 'Dima', 'users' => $users
     ]);
+    
+    
 });
 
 Route::get('/edit/{id}', function ($id) {
@@ -53,3 +57,22 @@ Route::get('/deluser', function () {
     return redirect('/');
     
 });
+
+
+Route::post('/login', function (Request $request) {
+        
+    if ($request->input('username') == '11' && $request->input('password') == '22') {
+        $request->session()->put('is_auth', 'true');
+    }
+    
+
+    return redirect('/');
+});
+
+
+Route::get('/logout', function (Request $request) {
+    $request->session()->forget('is_auth');
+    return redirect('/');
+});
+
+Route::resource('pages', 'PageController');

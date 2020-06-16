@@ -13,6 +13,27 @@
     </head>
     <body>
        <h1>Hello</h1>
+
+
+
+
+       @if(Session::has('is_auth'))
+            <a href="/logout">Logout</a>
+       @else    
+            <form action="/login" method="POST">
+                    @csrf
+                    <input name="username" />
+                    <input name="password" />
+                    <input type="submit" value="Вход" />
+            </form>
+        @endif
+        
+
+       <ul>
+            @foreach ($users as $item)
+                <li>{{ $item->EMAIL }}</li>
+            @endforeach
+        </ul>
        
 
        @section('content')
