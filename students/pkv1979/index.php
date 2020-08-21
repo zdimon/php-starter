@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php
+session_start();
+
+require_once('libs/app.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,20 +22,20 @@
 
   <div id="main-content">
     <?php
-      $page = 'pages/' . str_replace('/', '', $_SERVER['REQUEST_URI']) . '.php';
-      if (file_exists($page)) {
-        include $page;
-      } else {
-        include 'pages/main-page.php';
-      }
+    $page = 'pages/' . str_replace('/', '', $_SERVER['REQUEST_URI']) . '.php';
+    if (file_exists($page)) {
+      include $page;
+    } else {
+      include 'pages/main-page.php';
+    }
     ?>
 
-    <?php if (array_key_exists('message', $_SESSION)): ?>
+    <?php if (array_key_exists('message', $_SESSION)) : ?>
     <div style="width: 100px; height: 100px; background: red;">
-      <?php 
+      <?php
         echo $_SESSION['message'];
         unset($_SESSION['message']);
-      ?>
+        ?>
     </div>
     <?php endif ?>
   </div>
