@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Кто победил в ВОВ?",
+    "type": "radio",
+    "name": "question1",
+    "answers": [
+      {
+        "text": "СССР",
+        "is_valid": "true"
+      },
+      {
+        "text": "США",
+        "is_valid": "false"
+      }
+    ]
+  },
+  {
+    "question": "Есть ли бог на свете?",
+    "type": "radio",
+    "name": "question2",
+    "answers": [
+      {
+        "text": "Да",
+        "is_valid": "true"
+      },
+      {
+        "text": "Нет",
+        "is_valid": "false"
+      },
+      {
+        "text": "Наука пока не в курсе дела",
+        "is_valid": "false"
+      }
+    ]
+  },
+  {
+    "question": "Любимое животное",
+    "type": "checkbox",
+    "name": "question3",
+    "answers": [
+      {
+        "text": "Кот",
+        "value": "cat"
+      },
+      {
+        "text": "Собака барабака",
+        "value": "dog"
+      },
+      {
+        "text": "Конь",
+        "value": "horse"
+      }
+    ]
+  },
+  {
+    "question": "Когда началась 2 мировая война",
+    "type": "select",
+    "name": "question4",
+    "answers": [
+      {
+        "text": "1941"
+      },
+      {
+        "text": "1918"
+      },
+      {
+        "text": "1939"
+      },
+      {
+        "text": "1945"
+      }
+    ]
+  },
+  {
+    "question": "Сколько вам лет",
+    "type": "text",
+    "name": "question5"
+  }
+]
