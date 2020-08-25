@@ -1,12 +1,24 @@
 <?php
 session_start();
+chdir('..');
+require_once('libs/app.php');
 
 $userName = $_POST['username'];
 $password = $_POST['password'];
 
-if ($userName === 'pkv' && $password === '123456') {
-  $_SESSION['loginUser'] = $userName;
-} else {
+$json_data = get_db_table('users');
+
+$login = false;
+
+foreach ($json_data as $user) {
+  if ($user->username === $userName  && $user->password === $password) {
+    $login = true;
+    $_SESSION['loginUser'] = $userName;
+    break;
+  }
+}
+
+if (!$login) {
   $_SESSION['message'] = 'Неверное имя пользователя или пароль';
 }
 

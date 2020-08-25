@@ -102,30 +102,44 @@ class Form
    */
   public function input($data)
   {
-    $tag = '<label for="' . $data['name'] . '">' . $data['title'] . "</label>";
-    $tag .= '<input name="' . $data['name'] . '" ';
-    if (isset($data['type'])) $tag .= ' type="' . $data['type'] . '"';
-    if (isset($data['id'])) $tag .= ' id="' . $data['id'] . '"';
-    if (isset($data['value'])) $tag .= ' value="' . $data['value'] . '"';
-    if (isset($data['autocomplete'])) $tag .= ' autocomplete="' . $data['autocomplete'] . '"';
-    if (isset($data['min'])) $tag .= ' min="' . $data['min'] . '"';
-    if (isset($data['max'])) $tag .= ' max="' . $data['max'] . '"';
-    if (isset($data['minlength'])) $tag .= ' minlength="' . $data['minlength'] . '"';
-    if (isset($data['placeholder'])) $tag .= ' placeholder="' . $data['placeholder'] . '"';
-    if (isset($data['pattern'])) $tag .= ' pattern="' . $data['pattern'] . '"';
-    if (isset($data['size'])) $tag .= ' size="' . $data['size'] . '"';
-    if (isset($data['step'])) $tag .= ' step="' . $data['step'] . '"';
-    if (isset($data['onClick'])) $tag .= ' onclick="' . $data['onClick'] . '"';
-    if (isset($data['onChange'])) $tag .= ' onchange="' . $data['onChange'] . '"';
-    if (isset($data['required'])) $tag .= ' required';
-    if (isset($data['checked'])) $tag .= ' checked';
-    if (isset($data['disabled'])) $tag .= ' disabled';
-    if (isset($data['readonly'])) $tag .= ' readonly';
-    if (isset($data['autofocus'])) $tag .= ' autofocus';
-    if (isset($data['multiple'])) $tag .= ' multiple';
-    if (isset($data['dir'])) $tag .= ' dir="' . $data['dir'] . '"';
-    if (isset($data['class'])) $tag .= ' class="' . $data['class'] . '"';
-    $tag .= " />";
+    if ($data['type'] === 'submit') {
+      $tag = '<div style="padding: 10px">';
+      $tag .= '<input type="submit" name="' . $data['name'] . '" ';
+      if (isset($data['value'])) $tag .= ' value="' . $data['value'] . '"';
+      if (isset($data['input-class'])) $tag .= ' class="' . $data['input-class'] . '"';
+      $tag .= '/></div>';
+    } else {
+      $tag = '<p>' . $data['title'] . '</p>';
+      $tag .= '<label ';
+      if (isset($data['label-class'])) $tag .= 'class="' . $data['label-class'] . '"';
+      $tag .= '>';
+      $tag .= '<input name="' . $data['name'] . '" ';
+      if (isset($data['type'])) $tag .= ' type="' . $data['type'] . '"';
+      if (isset($data['id'])) $tag .= ' id="' . $data['id'] . '"';
+      if (isset($data['value'])) $tag .= ' value="' . $data['value'] . '"';
+      if (isset($data['autocomplete'])) $tag .= ' autocomplete="' . $data['autocomplete'] . '"';
+      if (isset($data['min'])) $tag .= ' min="' . $data['min'] . '"';
+      if (isset($data['max'])) $tag .= ' max="' . $data['max'] . '"';
+      if (isset($data['minlength'])) $tag .= ' minlength="' . $data['minlength'] . '"';
+      if (isset($data['placeholder'])) $tag .= ' placeholder="' . $data['placeholder'] . '"';
+      if (isset($data['pattern'])) $tag .= ' pattern="' . $data['pattern'] . '"';
+      if (isset($data['size'])) $tag .= ' size="' . $data['size'] . '"';
+      if (isset($data['step'])) $tag .= ' step="' . $data['step'] . '"';
+      if (isset($data['onClick'])) $tag .= ' onclick="' . $data['onClick'] . '"';
+      if (isset($data['onChange'])) $tag .= ' onchange="' . $data['onChange'] . '"';
+      if (isset($data['required'])) $tag .= ' required';
+      if (isset($data['checked'])) $tag .= ' checked';
+      if (isset($data['disabled'])) $tag .= ' disabled';
+      if (isset($data['readonly'])) $tag .= ' readonly';
+      if (isset($data['autofocus'])) $tag .= ' autofocus';
+      if (isset($data['multiple'])) $tag .= ' multiple';
+      if (isset($data['dir'])) $tag .= ' dir="' . $data['dir'] . '"';
+      if (isset($data['input-class'])) $tag .= ' class="' . $data['input-class'] . '"';
+      $tag .= " />";
+      $tag .= '<span';
+      if (isset($data['span-class'])) $tag .= ' class="' . $data['span-class'] . '"';
+      $tag .= '></span></label>';
+    }
 
     return $tag;
   }

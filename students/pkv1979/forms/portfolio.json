@@ -1,7 +1,5 @@
 {
   "name": "formName",
-  "title": "Registration form",
-  "description": "simple JFG example.",
   "method": "post",
   "action": "post/portfolio.php",
   "properties": {
@@ -11,7 +9,10 @@
       "name": "firstName",
       "value": "test",
       "required": true,
-      "onChange": "console.log(this.value)"
+      "onChange": "console.log(this.value)",
+      "label-class": "mdc-text-field mdc-text-field--filled",
+      "input-class": "mdc-text-field__input",
+      "span-class": "mdc-line-ripple"
     },
     "lastName": {
       "type": "input",

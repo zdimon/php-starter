@@ -1,0 +1,30 @@
+{
+  "name": "formRegister",
+  "method": "post",
+  "action": "post/register.php",
+  "properties": {
+    "userName": {
+      "type": "text",
+      "title": "Имя пользователя",
+      "name": "username",
+      "required": true,
+      "label-class": "mdc-text-field mdc-text-field--filled",
+      "input-class": "mdc-text-field__input",
+      "span-class": "mdc-line-ripple"
+    },
+    "userPassword": {
+      "type": "password",
+      "title": "Пароль",
+      "name": "password",
+      "required": true,
+      "label-class": "mdc-text-field mdc-text-field--filled",
+      "input-class": "mdc-text-field__input",
+      "span-class": "mdc-line-ripple"
+    },
+    "submit": {
+      "type": "submit",
+      "value": "Регистрация",
+      "input-class": "mdc-button mdc-button--raised"
+    }
+  }
+}

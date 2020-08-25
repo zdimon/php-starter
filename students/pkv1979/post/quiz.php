@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-$content = file_get_contents('../quiz.json');
-$json_data = json_decode($content);
+$json_data = get_db_table('quiz');
 
 $result = '';
 

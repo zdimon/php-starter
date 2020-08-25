@@ -26,7 +26,7 @@ function createForm($formName)
 function save_db($table_name, $data)
 {
   $all_db = get_db();
-  $all_db->$table_name = $data;
+  array_push($all_db->$table_name, $data);
   $str = json_encode($all_db);
   file_put_contents('db.json', $str);
 }
